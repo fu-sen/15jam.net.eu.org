@@ -1,0 +1,13 @@
+ErrorDocument 404 /index.shtml
+
+Header set Access-Control-Allow-Origin "*"
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} !15jam.net.eu.org
+RewriteRule .* - [R=404,L]
+
+RewriteCond %{HTTP_USER_AGENT} !MixJuice
+RewriteCond %{HTTP_REFERER} !fukuno.jig.jp
+RewriteRule .* https://github.com/fu-sen/15jam.net.eu.org [R=301,L]
